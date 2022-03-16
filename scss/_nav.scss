@@ -1,0 +1,63 @@
+/* Pisando el estilo a Bootstrap */
+@import "./mediaQueries";
+.navbar-light .navbar-nav .nav-link{
+    //color:white;
+    //font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    //font-size: 1.2rem;
+    color: #fff;
+    font-size: 1rem;
+    @include tablet{
+        font-size: 1.2rem;
+    }
+    @include desktop{
+        font-size:1.5rem;
+    }
+    //margin: 0 2rem;
+    &:hover{
+        color:wheat;
+        text-decoration: underline;
+        text-underline-offset: 1rem;
+        color: #eacf4f;
+    }
+}
+// .nav-link:hover{
+//     color:wheat;
+    
+// }
+.navbar-light .navbar-toggler{
+    color:white;
+    border-color:white;
+}
+.nvarbar__img{
+    @include movil{
+        width: 240px;
+        
+    }
+    @include tablet{
+        width: 280px; 
+        
+    }
+    @include desktop{
+        width: 320px; 
+        
+    }
+    &:hover {
+        transform:scale(1.1);
+    }
+}
+.navbar-expand-lg .navbar-collapse {
+    
+    justify-content: flex-end;
+}
+
+/* .navbar a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 2rem;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    color: #eacf4f;
+} */

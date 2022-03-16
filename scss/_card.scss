@@ -1,0 +1,113 @@
+.card__numero {
+    width: 2rem;
+    height: 40px;
+    //margin-top: 10px;
+}
+
+.card__container {
+    min-height: 100vh;
+    background-image: url("../img/Yes-inner.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 80px;
+    &--Index{
+        background-image: none;
+    }
+}
+
+.mycard {
+    height: 450px;
+    width: 280px;
+    border: 8px solid #fff;
+    box-shadow: 0 3px 5px #000;
+    overflow: hidden;
+    margin: 20px 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: .25rem; 
+
+    &--Index{
+        height: 600px;
+        width:400px;
+    }
+    &--Disk{
+        height: 600px;
+        width:400px;
+        &__details {
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    &:hover{
+        .stars--Disk{
+            display: flex;
+            font-size: 1.7rem;
+            color:orange;
+            padding:.5rem 0;
+        }
+    } 
+}
+    
+    &:hover &__img {
+            filter: grayscale(0%)
+        }
+
+    &:hover &__details {
+            display: flex;
+            text-align: center;
+        }
+    
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: grayscale(1);
+        margin: 5px 5px;
+    }
+
+    &__title {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.5rem;
+        color: grey;
+        text-transform: capitalize;
+        margin-bottom: 0.1rem;
+        text-align: center;
+
+        &--subtitle {
+            color: red;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    &__details {
+        display: none;
+
+    }
+}
+.stars i{
+    font-size: 1.7rem;
+    color:orange;
+    padding:.5rem 0;
+}
+.stars--Disk{
+    display: none;
+}    
+

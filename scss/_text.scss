@@ -1,0 +1,62 @@
+@import "./variables";
+@import "./mediaQueries";
+$alignment:(
+    Centro:center,
+    Izq:left,
+    Der:right,
+    Just:justify,
+);
+
+@each $name, $value in $alignment {
+    .textoAlineado#{$name}{
+        text-align: $value;
+    }
+    
+}
+.textoBusqueda{
+    height:40px;
+    width: 100%;
+    @include tablet{
+        width: 75%;
+        
+        
+    }
+    @include desktop{
+        width: 75%;
+        
+    }
+}
+.texto-borde {
+    -webkit-text-stroke: 2px black;
+    }
+p.estilo-1::first-letter{
+	font-size:2em;
+	font-family:serif;
+}
+.separatorParagraph{
+    margin: 0.5rem;
+}
+
+.textUpper{
+    text-transform: $minusculas;
+}
+
+.textComicSans{
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.textlarge{
+    font-size: 20px;
+}
+
+.textAlignCenter{
+    text-align: center;
+}
+
+.textAlignRight{
+    text-align: right;
+}
+
+.textInter{
+    line-height: 1;
+}

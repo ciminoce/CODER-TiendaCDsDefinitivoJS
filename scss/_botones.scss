@@ -1,0 +1,61 @@
+.btnVacio{
+    //margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem .8rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    border: .2rem solid orange;
+    color: white;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+}
+.btnVacio--block{
+    display: inline-flex;
+}
+.btnVacio--block--black{
+    color:black;
+}
+.botonRojo{
+    //margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: red;
+    /* border: .2rem solid red; */
+    
+}
+.botonRojo:hover{
+    background: rgb(153, 8, 8);
+    color: #fff;
+    
+}
+.botonAzul{
+    //margin-top: 1rem;
+    display: inline-block;
+    
+    padding: .8rem 0.8rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0d6efd;
+    /* border-color: #0d6efd; */
+    
+}
+.botonAzul:hover{
+    background-color: #0b3d88;
+    color: #fff;
+}
+.btnVacio:hover{
+    background: orange;
+    border: .2rem solid white;
+    color:#fff;
+}

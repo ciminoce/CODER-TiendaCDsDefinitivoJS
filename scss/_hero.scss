@@ -1,0 +1,94 @@
+.hero { 
+    //height: 500px;
+    width: 100vw;
+    height: 80vh;
+    // margin: 0 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/Yes-inner.jpg");
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.hero-content{
+    position: relative; 
+    //font-family: "Monserrat", sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0.625rem;
+}
+.hero-title{
+    color: #ffff;
+    font-size: 2.4rem;
+    //font-weight: bold;
+    
+
+    text-align: center;
+    
+    @include tablet{
+        font-size: 3.5rem;
+        
+    }
+    @include desktop{
+        font-size: 4rem;
+        
+    }
+}
+.hero-subtitle{
+    color:#ffff;
+    //font-family: Georgia, 'Times New Roman', Times, serif;
+    //font-weight: bold;
+    text-align: center;
+    font-size: 1.7rem;
+    
+    padding: 10px;
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    @include tablet{
+        font-size: 2rem;
+        
+    }
+    @include desktop{
+        font-size:3rem;
+        
+    }
+}
+.hero-text {
+    font-size:1.5rem;
+    text-align: center;
+    color: #ffff;
+    @include tablet{
+        font-size: 1.7rem;
+        
+    }
+    @include desktop{
+        font-size:2rem;
+        
+    }
+}
+.hero-text span{
+    color:orange;
+    font-size: 1.5rem;
+    @include tablet{
+        font-size: 1.7rem;
+        
+    }
+    @include desktop{
+        font-size:2rem;
+        
+    }
+}
+.hero-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+

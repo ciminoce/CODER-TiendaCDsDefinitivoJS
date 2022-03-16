@@ -1,0 +1,65 @@
+@import "./mediaQueries";
+.gallery{
+    padding:20px 8%;
+    column-count: 1;
+    gap: 10px;
+    @include tablet {
+        column-count: 2;
+    }
+    
+    @include desktop {
+        column-count: 3;
+        
+    }
+}
+.newCard{
+    background: #ffff;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: 0 3px 5px rgba(0,0,0,0.3);
+    break-inside: avoid;
+    &--Green1{
+        background: #74C69D;
+    }
+    &--Green2{
+        background: #52B788;
+    }
+    &--Green3{
+        background: #40916C
+    }
+    &--Black{
+        background: #2D6A4F;
+    }
+}
+
+.newCard-span{
+    font-size: 20px;
+    color:#2D6A4F;
+    font-weight: bold;
+    
+}
+.newCard-spanWhite{
+    font-size: 20px;
+    color:#ffff;
+    font-weight: bold;
+    
+}
+
+.newCard-img{
+    width: 100%;
+    object-fit: cover;
+}
+.newCard-title{
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    //color: #95D5B2;
+    color:#000
+}
+.newCard-text{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.card-body{
+    margin:3px;
+}

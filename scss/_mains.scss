@@ -1,0 +1,183 @@
+@import "./variables";
+@import "./mediaQueries";
+.main__closeTo{
+    
+    &_paragraph{
+        font-size: 1rem;
+        @include tablet{
+            font-size: 1.2rem;
+            
+        }
+        @include desktop{
+            font-size: 2rem;
+            
+        }   
+    }
+}
+.main__ranking{
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.main__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__text{
+        font-size: 1.5rem;
+
+    }
+    @include tablet{
+        font-size: 1.2rem;
+        display: block;
+        
+    }
+    @include desktop{
+        font-size: 2rem;
+        display: block;
+    } 
+    @include xlarge{
+        font-size: 3rem;
+        display: block;
+    }     
+}
+.main__destacados{
+    
+    .main__destacados__col{
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+.main__disqueria{
+    background-image: url('../img/Home-Roger-Dean.jpeg');
+    
+    &__encabezado{
+        background-color: black;
+        margin-bottom: 5px;
+    }
+    &__carrito__button{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__busqueda{
+        
+        background:rgba(64, 145, 108,0.7);
+        //margin-bottom: 3px ;
+        margin: 3px auto;
+        width: 100%;
+        color:white;
+        @include tablet{
+            width: 80%;
+            
+            
+        }
+        @include desktop{
+            width: 70%;
+            
+        }
+        &__col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include tablet{
+                flex-direction: row;
+                align-items: baseline;
+                
+            }
+            @include desktop{
+                flex-direction: row;
+                align-items: baseline;
+                
+            }
+        }
+    }
+    &__busqueda__title{
+        margin-left: 10px;
+    }
+    &__busqueda__opciones{
+        margin-bottom: 10px;
+    }
+    &__detalles{
+        
+        &__row{
+                margin-bottom: 3px;
+            }
+        &__col{
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+
+
+}
+
+.main__contacto{
+    
+    background-image: url("../img/Home-Roger-Dean.jpeg");
+    background-size: cover;
+    min-height: 1000px;
+    &__form{
+        color:white;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        padding: 16px;
+        background-color: rgba(116, 198, 157, 0.5);
+        margin:auto;
+        @include tablet{
+            background-color: rgba(82, 183, 136, 0.5);
+            
+            
+        }
+        @include desktop{
+            background-color:rgba(64, 145, 108, 0.5);
+            
+        }
+        
+    }
+}
+.main__400{
+    &__container{
+        min-height: 100vh;
+        background-color: #ffff;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        
+        
+    }
+    &__image{
+        display:block;
+        margin:auto;
+    }
+    &__Title{
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 4rem;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: capitalize;
+
+    }
+    &__text{
+        font-family:'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        
+    }    
+}
+
