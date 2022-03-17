@@ -1325,9 +1325,26 @@ legend.scheduler-border {
 }
 
 .boton-eliminar {
+  background-color: none;
   color: red;
   border: none;
   font-size: 20px;
+}
+
+.boton-eliminar__checkout {
+  background-color: #D8F3DC;
+}
+
+@media screen and (min-width: 768px) {
+  .boton-eliminar__checkout {
+    background-color: #B7E4C7;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .boton-eliminar__checkout {
+    background-color: #95D5B2;
+  }
 }
 
 .carrito-vacio {
@@ -1401,7 +1418,7 @@ legend.scheduler-border {
   -webkit-box-shadow: 0px 0px 22px 1px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 22px 1px rgba(0, 0, 0, 0.75);
   position: fixed;
-  top: 2.5rem;
+  top: 3.5rem;
   right: 2.5rem;
   height: 5rem;
   width: 5rem;
