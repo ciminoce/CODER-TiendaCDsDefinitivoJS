@@ -12,16 +12,6 @@ const detalleBody=document.getElementById('detallesTbody')
 const footerCarrito=document.getElementsByClassName('myModal-footer')[0];
 
 
-/* // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0]; */
-
-// When the user clicks the button, open the modal 
-/* botonCarrito.addEventListener('click',()=> {
-    modalCarrito.style.display = "block";
-    carritoDeCompras.length==0? noHayProductos(): hayProductos() //cuando no hay productos
-    
-    
-}); */
 
 btnCerrarCarrito.addEventListener('click',()=>{
     modalCarrito.style.display="none";
@@ -292,10 +282,9 @@ function agregarHtmlCarrito(cd){
         cd.cantidad=parseInt(inputDelCarrito.value);//tomo el valor del input del carrito
 
         document.getElementById(`subtotal${id}`).innerHTML = `<td id="subtotal${id}">${cd.cantidad*precio}</td>`;//actualizo el sub
-        /* valorAnterior<inputDelCarrito.value?actualizarStock(cd,true,1):actualizarStock(cd,false,1); */
         
         actualizarCarritoDeCompras();
-
+        showCartIcon();
         localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
     })
     
@@ -322,12 +311,12 @@ function agregarHtmlCarrito(cd){
                     carritoDeCompras = carritoDeCompras.filter(item => item.id != id);//actualizo el array carrito
         
                     carritoDeCompras.length==0 && noHayProductos()
-                    
+                    actualizarCarritoDeCompras();//
+                    showCartIcon();
+                    localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));    
                     
                 }
-                actualizarCarritoDeCompras();//
-                showCartIcon();
-                localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
+                
 
                 Swal.fire(
                 'Borrado!',
@@ -395,13 +384,12 @@ function showCartIcon (){
         cartIconContainer.classList.add("xxx");
     }else{
         // Hidden modal cart & cart icon
-        //cartIconContainer.classList.remove("fadeIn");
+        cartIconContainer.classList.remove("fadeIn");
         //modalCart.classList.add("hidden");
     }
 }
 cartIconContainer.addEventListener("click", ()=>{
-    //modalCarrito.classList.toggle("hidden");
-    //console.log(carritoDeCompras);
+    
     modalCarrito.style.display = "block";
     carritoDeCompras.length==0? noHayProductos(): hayProductos() //cuando no hay productos 
 })

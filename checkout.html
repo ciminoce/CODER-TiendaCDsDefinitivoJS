@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <meta name="description" content="Tienda virtual de CDs de música en línea especializado en rock progresivo y música celta">
-        <meta name="keywords"  content="MÚSICA, VENTA, CD, ROCK, ROCK PROGRESIVO, CELTA, MÚSICA CELTA, TIENDA VIRTUAL">
-        <title>Carrito</title>
-        
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-        <script src="https://kit.fontawesome.com/766389a881.js" crossorigin="anonymous"></script>
-        
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Tienda virtual de CDs de música en línea especializado en rock progresivo y música celta">
+    <meta name="keywords" content="MÚSICA, VENTA, CD, ROCK, ROCK PROGRESIVO, CELTA, MÚSICA CELTA, TIENDA VIRTUAL">
+    <title>Carrito</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://kit.fontawesome.com/766389a881.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="./scss/main.css">
-    </head>
+
+    <link rel="stylesheet" href="./scss/main.css">
+</head>
 
 <body class="bodyCarrito">
     <header class="header">
@@ -60,40 +61,38 @@
 
 
     </header>
-    
+
     <main class="main__carrito">
         <h1 class="main__subtitulo main__subtitulo--izq">Carrito de Compras</h1>
         <div class="carrito-Detalle">
-                <table id="carrito-table" class="table table-hover">
-                    <thead>
-                        <tr class="carrito-titles">
-                            <th style="width:20%">Imagen</th>
-                            <th style="width:30%">Descripción</th>
-                            <th style="width:15%">P. Unit</th>
-                            <th style="width:10%">Cantidad</th>
-                            <th style="width:15%">Subtotal</th>
-                            <th style="width:10%"></th>
-                        </tr>    
-                    </thead>
-                    <tbody id="detallesTbody">
+            <table id="carrito-table" class="table table-hover">
+                <thead>
+                    <tr class="carrito-titles">
+                        <th style="width:20%">Imagen</th>
+                        <th style="width:30%">Descripción</th>
+                        <th style="width:15%">P. Unit</th>
+                        <th style="width:10%">Cantidad</th>
+                        <th style="width:15%">Subtotal</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="detallesTbody">
 
-                    </tbody>
-                    
+                </tbody>
 
-                    
-                </table>
-                
-            </div>
-            <div class="carrito-footer">
-                
-                <a href="index.html" class="btn btn-primary m-3" >Seguir Comprando</a>
-                <a href="payment.html" id="btnFinalizar" class="btn btn-success m-3">Finalizar Compra</a>
-                
-            </div>
+            </table>
+
         </div>
-    
+        <div class="carrito-footer">
+            <h4>Total: $<span id="totalCarrito"></span></h4>  
+            <a href="index.html" class="btn btn-primary m-3">Seguir Comprando</a>
+            <a href="payment.html" id="btnFinalizar" class="btn btn-success m-3">Finalizar Compra</a>
+
+        </div>
+        
+
     </main>
-    
+
     <div class="footer d-flex flex-lg-row justify-content-between flex-column align-items-center ">
         <div class="footer__links">
             <ul class="footer__list">
@@ -138,7 +137,7 @@
     <script src="./js/claseCd.js"></script>
     <script src="./js/carrito.js"></script>
     <script src="./js/checkout.js"></script>
-    
+
 </body>
 
 </html>

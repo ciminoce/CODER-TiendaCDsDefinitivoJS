@@ -6,16 +6,17 @@ let carritoDeCompras=[];
 
 /* Cosas del carrito */
 /* const contadorCarrito = document.getElementById('contadorCarrito'); */ 
-let totalCarrito = 0;
+//let totalCarrito = 0;
 
-/* const detalleCarrito=document.getElementById('detallesTbody'); */
+const detalle=document.getElementById('detallesTbody'); 
 const footer=document.getElementsByClassName('footer')[0];
+const totalCarrito=document.getElementById('totalCarrito');
 footer.classList.add('footerAlFinal')
 
 /* funcion para agregar al html del carrito */
 function mostrarCarrito(){
     carritoDeCompras.forEach(item=>{
-         
+    
 
         console.log(item);
 
@@ -33,7 +34,7 @@ function mostrarCarrito(){
                         
         /* let filaMensaje=document.getElementById('celdaMensajeCarritoVacio')
         filaMensaje && quitarMensajeCarritoVacio(filaMensaje); //Quito el mensaje de carrito vacío */
-        detalleCarrito.appendChild(fila);
+        detalle.appendChild(fila);
         let inputDelCarrito=document.getElementById(`input${id}`);
         inputDelCarrito.addEventListener('focus',()=>{
             valorAnterior=inputDelCarrito.value;
@@ -91,7 +92,7 @@ function mostrarCarrito(){
         });
 
     });
-
+    totalCarrito=totalizarCarrito();
     let fila=document.createElement('tr');
         fila.id=`rowTotal`;
         fila.innerHTML=`<td></td>
@@ -99,20 +100,28 @@ function mostrarCarrito(){
                         <td></td>
                         <td><strong><span>Total: $</span></strong></td>
                         <td id="totalFinal"><strong>${totalCarrito}</strong> </td> <td></td>`;
-        detalleCarrito.appendChild(fila);
+    detalle.appendChild(fila);
 
     
     localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
 }
-/* fin funcion agregar al html del carrito */
+/* fin funcion  */
 
 
 
 /* funcion que retorna el total del carrito */
 function totalizarCarrito(){
-    
+    totalCarrito=carritoDeCompras.reduce((acc,cd)=> acc + (cd.precio * cd.cantidad), 0);
+    let fila=document.createElement('tr');
+        fila.id=`rowTotal`;
+        fila.innerHTML=`<td></td>
+                        <td></td>
+                        <td></td>
+                        <td><strong><span>Total: $</span></strong></td>
+                        <td id="totalFinal"><strong>${totalCarrito}</strong> </td> <td></td>`;
+    detalle.appendChild(fila);
     //contadorCarrito.innerText = carritoDeCompras.reduce((acc,cd)=> acc +cd.cantidad , 0);
-    return carritoDeCompras.reduce((acc,cd)=> acc + (cd.precio * cd.cantidad), 0);
+    
 }
 
 
@@ -144,7 +153,9 @@ async function cargarArrayCds() {
     console.log(cdsDisqueria.length);
     
     recuperarCarrito(); //Recupero el carrito del localStorage
-    mostrarCarrito();
+    showCartIcon();
+    //totalizarCarrito();
+    //mostrarCarrito();
     //return array;
 }
 /* Comienzo */
