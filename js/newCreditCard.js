@@ -9,6 +9,61 @@ mesExpiracion = document.querySelector('#tarjeta .mes'),
 yearExpiracion = document.querySelector('#tarjeta .year');
 ccv = document.querySelector('#tarjeta .ccv');
 
+const btnConfirmarPago=document.getElementById('btnConfirmarPago');
+const btnCancelarPago=document.getElementById('btnCancelarPago');
+
+btnConfirmarPago.addEventListener('click',()=>{
+	Swal.fire({
+		icon: 'success',
+		title: 'Do you want to save the changes?',
+		showDenyButton: false,
+		showCancelButton: false,
+		confirmButtonText: 'OK',
+		denyButtonText: `Don't save`,
+	  }).then((result) => {
+		/* Read more about isConfirmed, isDenied below */
+		if (result.isConfirmed) {
+			localStorage.removeItem('carrito');
+			window.close();
+			window.open("index.html");
+		} else if (result.isDenied) {
+		  Swal.fire('Changes are not saved', '', 'info')
+		}
+	  })
+	/* 
+    /* Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Pago efectuado',
+        showConfirmButton: true,
+        timer: 5000,
+    }) */
+    
+})
+btnCancelarPago.addEventListener('click',()=>{
+    Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Pago cancelado',
+        showConfirmButton: false,
+        timer: 2000,
+    })
+    //localStorage.removeItem('carrito');
+    window.close();
+    window.open("index.html");
+})
+function checkAllFields(){
+    if (numeroTarjeta.value!="" && nombreTarjeta.value!=""
+        && mesExpiracion.value!="" && yearExpiracion.value!="") {
+        console.log('todos llenos');
+        btnConfirmarPago.removeAttribute('disabled');
+    }
+    else{
+        console.log('algo falta');
+        btnConfirmarPago.setAttribute('disabled','true');
+    }
+}
+
 // * Volteamos la tarjeta para mostrar el frente.
 const mostrarFrente = () => {
 	if(tarjeta.classList.contains('active')){
@@ -80,6 +135,7 @@ formulario.inputNumero.addEventListener('keyup', (e) => {
 
 	// Volteamos la tarjeta para que el usuario vea el frente.
 	mostrarFrente();
+    checkAllFields();
 });
 
 // * Input nombre de tarjeta
@@ -91,22 +147,25 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 	firma.textContent = valorInput;
 
 	if(valorInput == ''){
-		nombreTarjeta.textContent = 'Jhon Doe';
+		nombreTarjeta.textContent = 'John Doe';
 	}
 
 	mostrarFrente();
+    checkAllFields();
 });
 
 // * Select mes
 formulario.selectMes.addEventListener('change', (e) => {
 	mesExpiracion.textContent = e.target.value;
 	mostrarFrente();
+    checkAllFields();
 });
 
 // * Select Año
 formulario.selectYear.addEventListener('change', (e) => {
 	yearExpiracion.textContent = e.target.value.slice(2);
 	mostrarFrente();
+    checkAllFields();
 });
 
 // * CCV
@@ -122,4 +181,5 @@ formulario.inputCCV.addEventListener('keyup', () => {
 	.replace(/\D/g, '');
 
 	ccv.textContent = formulario.inputCCV.value;
+    checkAllFields();
 });
